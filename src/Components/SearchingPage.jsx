@@ -70,7 +70,7 @@ const SearchingPage = () => {
                                 <Book 
                                     key={idx}
                                     title={book.title}
-                                    author={book.author}
+                                    authors={book.authors}
                                     imgURL={book.imageLinks && book.imageLinks.thumbnail}
                                     bookShelf={book.shelf}
                                     book={book}

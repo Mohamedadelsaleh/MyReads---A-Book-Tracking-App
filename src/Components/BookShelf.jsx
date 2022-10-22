@@ -14,7 +14,7 @@ const BookShelf = ({
             <li key={idx}>
                 <Book 
                     title={book.title}
-                    author={book.author}
+                    authors={book.authors}
                     imgURL={book.imageLinks && book.imageLinks.thumbnail}
                     bookShelf={book.bookShelf}
                     book={book}

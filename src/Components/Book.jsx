@@ -4,14 +4,14 @@ import * as APIs from "../BooksAPI";
 const Book = ({
     imgURL,
     title, 
-    author, 
+    authors, 
     book, 
     setBooks, 
     searching, 
     bookShelf}) => {
-
+    
     const handleBookStatus = (e) => {
-        if(e.target.value !== "set") {
+        if(e.target.value !== "move") {
             APIs.update(
                 book, 
                 e.target.value
@@ -26,7 +26,7 @@ const Book = ({
     }
 
     const handleBookSearching = (e) => {
-        if(e.target.value !== "set") {
+        if(e.target.value !== "move") {
             APIs.update(
                 book, 
                 e.target.value
@@ -56,9 +56,9 @@ const Book = ({
                             }
                         }
                     }
-                    defaultValue={bookShelf}
+                    value={book.shelf}
                     >
-                    <option value="set" disabled>
+                    <option value="move" disabled>
                         Move to...
                     </option>
                     <option value="currentlyReading">
@@ -71,7 +71,7 @@ const Book = ({
                 </div>
             </div>
             <div className="book-title">{title}</div>
-            <div className="book-authors">{author}</div>
+            <div className="book-authors">{authors && authors.map(author => `${author},`)}</div>
     </div>
     )
 }
